@@ -61,6 +61,15 @@
               <option value="name-asc">Назва: А-Я</option>
             </select>
           </label>
+
+          <div class="view-toggle" data-view-toggle role="group" aria-label="Відображення каталогу">
+            <button class="view-toggle__btn is-active" type="button" data-view="comfortable" aria-pressed="true">
+              Детально
+            </button>
+            <button class="view-toggle__btn" type="button" data-view="compact" aria-pressed="false">
+              Сітка
+            </button>
+          </div>
         </div>
 
         <div class="catalog-grid" data-products-grid data-catalog-mode="all" aria-live="polite"></div>

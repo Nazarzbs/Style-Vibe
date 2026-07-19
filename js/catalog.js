@@ -3,11 +3,14 @@ const INSTAGRAM_DM = "https://ig.me/m/stylevibe.ua";
 const INSTAGRAM_HINT =
   "Оберіть модель і напишіть нам в Instagram — відповімо щодо розміру й оплати.";
 
+const VIEW_STORAGE_KEY = "stylevibe-catalog-view";
+
 const state = {
   products: [],
   search: "",
   sort: "featured",
   mode: "all",
+  view: "comfortable",
 };
 
 const elements = {
@@ -15,6 +18,7 @@ const elements = {
   searchInput: document.querySelector("[data-search-input]"),
   sortSelect: document.querySelector("[data-sort-select]"),
   emptyState: document.querySelector("[data-empty-state]"),
+  viewToggle: document.querySelector("[data-view-toggle]"),
   modal: document.querySelector("[data-modal]"),
   modalImage: document.querySelector("[data-modal-image]"),
   modalTitle: document.querySelector("[data-modal-title]"),
@@ -142,6 +146,27 @@ function closeModal() {
   document.body.classList.remove("modal-open");
 }
 
+function applyViewMode(view) {
+  if (!elements.grid) {
+    return;
+  }
+
+  state.view = view === "compact" ? "compact" : "comfortable";
+  elements.grid.classList.toggle("is-compact", state.view === "compact");
+
+  elements.viewToggle?.querySelectorAll("[data-view]").forEach((button) => {
+    const isActive = button.dataset.view === state.view;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+
+  try {
+    localStorage.setItem(VIEW_STORAGE_KEY, state.view);
+  } catch {
+    // Ignore storage errors in private mode.
+  }
+}
+
 function initCatalogEvents() {
   elements.searchInput?.addEventListener("input", (event) => {
     state.search = event.target.value;
@@ -151,6 +176,16 @@ function initCatalogEvents() {
   elements.sortSelect?.addEventListener("change", (event) => {
     state.sort = event.target.value;
     renderProducts();
+  });
+
+  elements.viewToggle?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-view]");
+
+    if (!button) {
+      return;
+    }
+
+    applyViewMode(button.dataset.view);
   });
 
   elements.grid?.addEventListener("click", (event) => {
@@ -191,6 +226,18 @@ async function loadProducts() {
 export async function initCatalog() {
   initCatalogEvents();
   state.mode = elements.grid?.dataset.catalogMode || "all";
+
+  let savedView = "comfortable";
+
+  try {
+    savedView = localStorage.getItem(VIEW_STORAGE_KEY) || "comfortable";
+  } catch {
+    savedView = "comfortable";
+  }
+
+  if (elements.viewToggle) {
+    applyViewMode(savedView);
+  }
 
   try {
     state.products = await loadProducts();
