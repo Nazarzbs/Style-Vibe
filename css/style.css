@@ -549,9 +549,10 @@ body.modal-open {
 
 .about-section {
   width: 100%;
-  padding-inline: max(20px, calc((100vw - 1180px) / 2));
+  padding: 112px max(24px, calc((100vw - 1180px) / 2));
   background: var(--color-primary);
   color: var(--color-secondary);
+  box-sizing: border-box;
 }
 
 .about-layout {
