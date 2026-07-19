@@ -4,20 +4,52 @@ import { initCatalog } from "./catalog.js";
 const header = document.querySelector("[data-header]");
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
-const sectionIds = ["home", "catalog", "about", "contacts"];
+const sectionIds = ["home", "popular", "about", "contacts"];
 
 function closeMenu() {
   nav?.classList.remove("is-open");
   navToggle?.setAttribute("aria-expanded", "false");
 }
 
-function setActiveNav(sectionId) {
+function closeDropdowns(exceptItem = null) {
+  document.querySelectorAll("[data-nav-item]").forEach((item) => {
+    if (item === exceptItem) {
+      return;
+    }
+
+    item.classList.remove("is-open");
+    item.querySelector("[data-dropdown-toggle]")?.setAttribute("aria-expanded", "false");
+  });
+}
+
+function getCurrentPageName() {
+  return window.location.pathname.split("/").pop() || "index.html";
+}
+
+function setActiveNav(sectionId = "") {
   if (!nav) {
     return;
   }
 
-  nav.querySelectorAll("a[href^='#']").forEach((link) => {
-    const isActive = link.getAttribute("href") === `#${sectionId}`;
+  const currentPage = getCurrentPageName();
+  const isCatalogPage = currentPage === "catalog.html";
+
+  nav.querySelectorAll(".nav-link").forEach((button) => {
+    const isActive =
+      (button.dataset.navGroup === "catalog" && isCatalogPage) ||
+      (button.dataset.navGroup === "home" && !isCatalogPage);
+
+    button.classList.toggle("is-active", isActive);
+    button.toggleAttribute("aria-current", isActive);
+  });
+
+  nav.querySelectorAll(".nav-dropdown a").forEach((link) => {
+    const url = new URL(link.href, window.location.href);
+    const linkPage = url.pathname.split("/").pop() || "index.html";
+    const isActive =
+      (isCatalogPage && linkPage === "catalog.html") ||
+      (!isCatalogPage && url.hash === `#${sectionId}`);
+
     link.classList.toggle("is-active", isActive);
     if (isActive) {
       link.setAttribute("aria-current", "true");
@@ -28,6 +60,11 @@ function setActiveNav(sectionId) {
 }
 
 function initScrollSpy() {
+  if (getCurrentPageName() === "catalog.html") {
+    setActiveNav();
+    return;
+  }
+
   const sections = sectionIds
     .map((id) => document.getElementById(id))
     .filter(Boolean);
@@ -62,23 +99,52 @@ function initNavigation() {
     navToggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
   });
 
-  document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const targetId = link.getAttribute("href");
+  document.querySelectorAll("[data-dropdown-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = button.closest("[data-nav-item]");
+      const isOpen = item?.classList.toggle("is-open");
 
-      if (!targetId || targetId === "#") {
+      closeDropdowns(item);
+      button.setAttribute("aria-expanded", String(Boolean(isOpen)));
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest("[data-nav]")) {
+      closeDropdowns();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeDropdowns();
+      closeMenu();
+    }
+  });
+
+  document.querySelectorAll("a[href*='#']").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const url = new URL(link.href, window.location.href);
+      const currentPage = getCurrentPageName();
+      const linkPage = url.pathname.split("/").pop() || "index.html";
+      const isSamePageHash = url.hash && (linkPage === currentPage || (currentPage === "" && linkPage === "index.html"));
+
+      if (!isSamePageHash) {
+        closeDropdowns();
+        closeMenu();
         return;
       }
 
-      const target = document.querySelector(targetId);
+      const target = document.querySelector(url.hash);
 
       if (!target) {
         return;
       }
 
       event.preventDefault();
+      closeDropdowns();
       closeMenu();
-      const sectionId = targetId.slice(1);
+      const sectionId = url.hash.slice(1);
       if (sectionIds.includes(sectionId)) {
         setActiveNav(sectionId);
       }

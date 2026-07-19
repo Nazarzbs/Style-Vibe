@@ -7,6 +7,7 @@ const state = {
   products: [],
   search: "",
   sort: "featured",
+  mode: "all",
 };
 
 const elements = {
@@ -73,7 +74,9 @@ function sortProducts(products) {
 }
 
 function getVisibleProducts() {
-  return sortProducts(state.products.filter(productMatchesSearch));
+  const products = state.mode === "featured" ? state.products.filter((product) => product.featured) : state.products;
+
+  return sortProducts(products.filter(productMatchesSearch));
 }
 
 function renderProducts() {
@@ -187,6 +190,7 @@ async function loadProducts() {
 
 export async function initCatalog() {
   initCatalogEvents();
+  state.mode = elements.grid?.dataset.catalogMode || "all";
 
   try {
     state.products = await loadProducts();

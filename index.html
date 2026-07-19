@@ -30,11 +30,9 @@
         <span></span>
       </button>
 
-      <nav class="site-nav" data-nav>
-        <a href="#home">Головна</a>
-        <a href="#catalog">Каталог</a>
-        <a href="#about">Про нас</a>
-        <a href="#contacts">Контакти</a>
+      <nav class="site-nav" data-nav aria-label="Основна навігація">
+        <a class="nav-link" href="index.html#home" data-nav-group="home">Головна</a>
+        <a class="nav-link" href="catalog.html" data-nav-group="catalog">Каталог</a>
       </nav>
 
       <a class="header-cta" href="https://ig.me/m/stylevibe.ua" target="_blank" rel="noreferrer">Замовити в Instagram</a>
@@ -48,38 +46,24 @@
           <h1 id="hero-title">Style Vibe</h1>
           <p class="hero__lead">Футболки з 100% бавовни: зручна посадка, щільна тканина й кольори, які працюють щодня.</p>
           <div class="hero__actions">
-            <a class="button button--primary" href="#catalog">Дивитися каталог</a>
+            <a class="button button--primary" href="#popular">Популярні товари</a>
             <a class="button button--ghost" href="https://ig.me/m/stylevibe.ua" target="_blank" rel="noreferrer">Замовити в Instagram</a>
           </div>
         </div>
       </section>
 
-      <section class="section catalog-section" id="catalog" aria-labelledby="catalog-title">
+      <section class="section catalog-section" id="popular" aria-labelledby="popular-title">
         <div class="section__head" data-reveal>
-          <p class="section__eyebrow">Каталог</p>
-          <h2 id="catalog-title">Оберіть модель під свій стиль</h2>
-          <p>Базові та акценти на сезон. Усі моделі — преміум-бавовна, розміри від XS до XXL, відправка по всій Україні.</p>
+          <p class="section__eyebrow">Популярні</p>
+          <h2 id="popular-title">Популярні товари</h2>
+          <p>Добірка моделей, які найчастіше обирають для базового гардероба та літніх образів.</p>
         </div>
 
-        <div class="catalog-toolbar" data-reveal>
-          <label class="field">
-            <span>Пошук</span>
-            <input type="search" placeholder="Наприклад: oversize, чорна, olive" data-search-input />
-          </label>
-
-          <label class="field">
-            <span>Сортування</span>
-            <select data-sort-select>
-              <option value="featured">Спочатку рекомендовані</option>
-              <option value="price-asc">Ціна: від дешевших</option>
-              <option value="price-desc">Ціна: від дорожчих</option>
-              <option value="name-asc">Назва: А-Я</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="catalog-grid" data-products-grid aria-live="polite"></div>
+        <div class="catalog-grid" data-products-grid data-catalog-mode="featured" aria-live="polite"></div>
         <p class="catalog-empty" data-empty-state hidden>Нічого не знайдено. Спробуйте інший запит.</p>
+        <div class="catalog-actions" data-reveal>
+          <a class="button button--primary" href="catalog.html">Дивитися весь каталог</a>
+        </div>
       </section>
 
       <section class="section about-section" id="about" aria-labelledby="about-title">
