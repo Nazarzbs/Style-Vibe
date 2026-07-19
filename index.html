@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="STITCH — магазин якісних футболок з 100% бавовни. Літня колекція 2026, доставка по Україні, шоурум у Києві."
+    />
+    <title>STITCH — футболки з бавовни</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#home" aria-label="STITCH — на головну">
+        <span class="brand__mark">S</span>
+        <span class="brand__name">STITCH</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Відкрити меню" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" data-nav>
+        <a href="#home">Головна</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#about">Про нас</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+
+      <a class="header-cta" href="#catalog">Купити</a>
+    </header>
+
+    <main>
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero__media" aria-hidden="true"></div>
+        <div class="hero__content" data-reveal="hero">
+          <p class="hero__eyebrow">Літня колекція 2026</p>
+          <h1 id="hero-title">STITCH</h1>
+          <p class="hero__lead">Футболки з 100% бавовни: зручна посадка, щільна тканина й кольори, які працюють щодня.</p>
+          <a class="button button--primary" href="#catalog">Дивитися каталог</a>
+        </div>
+      </section>
+
+      <section class="section catalog-section" id="catalog" aria-labelledby="catalog-title">
+        <div class="section__head" data-reveal>
+          <p class="section__eyebrow">Каталог</p>
+          <h2 id="catalog-title">Оберіть модель під свій стиль</h2>
+          <p>Базові та акценти на сезон. Усі моделі — преміум-бавовна, розміри від XS до XXL, відправка по всій Україні.</p>
+        </div>
+
+        <div class="catalog-toolbar" data-reveal>
+          <label class="field">
+            <span>Пошук</span>
+            <input type="search" placeholder="Наприклад: oversize, чорна, olive" data-search-input />
+          </label>
+
+          <label class="field">
+            <span>Сортування</span>
+            <select data-sort-select>
+              <option value="featured">Спочатку рекомендовані</option>
+              <option value="price-asc">Ціна: від дешевших</option>
+              <option value="price-desc">Ціна: від дорожчих</option>
+              <option value="name-asc">Назва: А-Я</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="catalog-grid" data-products-grid aria-live="polite"></div>
+        <p class="catalog-empty" data-empty-state hidden>Нічого не знайдено. Спробуйте інший запит.</p>
+      </section>
+
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="about-layout">
+          <div class="about-copy" data-reveal>
+            <p class="section__eyebrow">Про нас</p>
+            <h2 id="about-title">Бренд, який робить базові речі по-справжньому добре</h2>
+            <p>
+              STITCH з’явився в Києві як невелика майстерня з фокусом на посадку й тканину. Ми відшиваємо обмежені партії, перевіряємо кожну модель після прання й залишаємо лише ті кольори, які хочеться носити весь сезон.
+            </p>
+          </div>
+
+          <div class="benefits" aria-label="Переваги магазину">
+            <article data-reveal>
+              <span>01</span>
+              <h3>Якість</h3>
+              <p>Щільна 180–220 gsm бавовна, акуратні шви та комір, що тримає форму.</p>
+            </article>
+            <article data-reveal>
+              <span>02</span>
+              <h3>Доставка</h3>
+              <p>Нова Пошта та Укрпошта по Україні за 1–2 робочі дні після підтвердження.</p>
+            </article>
+            <article data-reveal>
+              <span>03</span>
+              <h3>Гарантія</h3>
+              <p>14 днів на обмін розміру. Якщо щось не сіло — допоможемо підібрати інший.</p>
+            </article>
+            <article data-reveal>
+              <span>04</span>
+              <h3>Сервіс</h3>
+              <p>Консультація в Telegram або за телефоном: підкажемо розмір і наявність.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contacts-section" id="contacts" aria-labelledby="contacts-title">
+        <div class="section__head" data-reveal>
+          <p class="section__eyebrow">Контакти</p>
+          <h2 id="contacts-title">Замовлення та питання щодо розміру — пишіть у будь-який зручний канал</h2>
+        </div>
+
+        <div class="contacts-layout">
+          <address class="contact-list" data-reveal>
+            <a href="tel:+380501112233">+38 (050) 111 22 33</a>
+            <a href="mailto:hello@stitch.ua">hello@stitch.ua</a>
+            <a href="https://instagram.com/stitch.ua" target="_blank" rel="noreferrer">Instagram @stitch.ua</a>
+            <a href="https://facebook.com/stitch.ua" target="_blank" rel="noreferrer">Facebook /stitch.ua</a>
+            <a href="https://t.me/stitch_ua" target="_blank" rel="noreferrer">Telegram @stitch_ua</a>
+          </address>
+
+          <a
+            class="map-link"
+            href="https://maps.google.com/?q=Київ,+вул.+Хрещатик,+22"
+            target="_blank"
+            rel="noreferrer"
+            data-reveal
+          >
+            <span>Шоурум · Google Maps</span>
+            <strong>Київ, вул. Хрещатик, 22</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand brand--footer" href="#home" aria-label="STITCH — на головну">
+        <span class="brand__mark">S</span>
+        <span class="brand__name">STITCH</span>
+      </a>
+      <p>© 2026 STITCH. Демо-версія для презентації.</p>
+      <div class="footer-links">
+        <a href="#contacts">Соцмережі</a>
+        <a href="#contacts">Політика конфіденційності</a>
+      </div>
+    </footer>
+
+    <div class="modal" data-modal hidden>
+      <div class="modal__backdrop" data-modal-close></div>
+      <article class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal__close" type="button" aria-label="Закрити" data-modal-close>×</button>
+        <div class="modal__image-wrap">
+          <img src="" alt="" data-modal-image />
+        </div>
+        <div class="modal__content">
+          <p class="section__eyebrow">Замовлення</p>
+          <h2 id="modal-title" data-modal-title></h2>
+          <p class="modal__price" data-modal-price></p>
+          <p data-modal-description></p>
+          <div class="modal__options">
+            <div>
+              <span>Розмір</span>
+              <div class="option-row" data-modal-sizes></div>
+            </div>
+            <div>
+              <span>Колір</span>
+              <div class="color-row" data-modal-colors></div>
+            </div>
+          </div>
+          <a class="button button--primary" href="#" data-order-link>Написати продавцю</a>
+        </div>
+      </article>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1000" role="img" aria-label="Graphite Heavy DCB1>;:0">
+  <rect width="900" height="1000" fill="#efe7dc"/>
+  <rect x="70" y="70" width="760" height="860" rx="44" fill="#111" opacity=".08"/>
+  <path d="M330 122 450 70l120 52 154 92-82 154-88-50v530H346V318l-88 50-82-154 154-92Z" fill="#2b2b2b"/>
+  <path d="M330 122c42 84 198 84 240 0L450 70l-120 52Z" fill="#3a3a3a"/>
+  <path d="M372 412h156M372 478h156M372 544h156" stroke="#6f6b66" stroke-width="14"/>
+  <text x="450" y="912" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#111">HEAVY</text>
+</svg>

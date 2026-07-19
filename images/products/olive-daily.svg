@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1000" role="img" aria-label="Olive Daily DCB1>;:0">
+  <rect width="900" height="1000" fill="#f6f0e8"/>
+  <path d="M0 0h900v300C728 340 640 270 498 314 314 370 210 508 0 464Z" fill="#111" opacity=".9"/>
+  <path d="M342 132 450 78l108 54 142 88-78 146-78-46v520H356V320l-78 46-78-146 142-88Z" fill="#56614a"/>
+  <path d="M342 132c40 78 176 78 216 0L450 78l-108 54Z" fill="#68745b"/>
+  <path d="M392 392c66 40 124 40 178 0v132c-60 46-120 46-178 0Z" fill="#111" opacity=".18"/>
+  <text x="450" y="912" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#111">DAILY</text>
+</svg>

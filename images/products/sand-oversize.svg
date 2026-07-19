@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1000" role="img" aria-label="Sand Oversize DCB1>;:0">
+  <rect width="900" height="1000" fill="#191919"/>
+  <circle cx="210" cy="240" r="250" fill="#ff6b00" opacity=".22"/>
+  <path d="M322 130 450 72l128 58 170 96-88 164-96-56v526H336V334l-96 56-88-164 170-96Z" fill="#d8c1a4"/>
+  <path d="M322 130c44 88 212 88 256 0L450 72 322 130Z" fill="#cbb293"/>
+  <path d="M342 460h216M342 530h216M342 600h216" stroke="#f5eadc" stroke-width="12" opacity=".5"/>
+  <text x="450" y="912" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#fff">OVERSIZE</text>
+</svg>

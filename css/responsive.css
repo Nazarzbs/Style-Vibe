@@ -1,0 +1,160 @@
+@media (max-width: 1199px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-header {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+
+  .header-cta {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  :root {
+    --container: min(100% - 28px, 760px);
+  }
+
+  .site-header {
+    top: 12px;
+    min-height: 62px;
+    padding: 10px 12px;
+    border-radius: 24px;
+  }
+
+  .nav-toggle {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--color-secondary);
+    transition: transform var(--transition);
+  }
+
+  .nav-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    left: 0;
+    display: grid;
+    gap: 0;
+    overflow: hidden;
+    border-radius: 22px;
+    background: rgba(17, 17, 17, 0.94);
+    box-shadow: var(--shadow);
+    max-height: 0;
+    opacity: 0;
+    transition: max-height var(--transition), opacity var(--transition);
+  }
+
+  .site-nav.is-open {
+    max-height: 280px;
+    opacity: 1;
+  }
+
+  .site-nav a {
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hero {
+    min-height: 92svh;
+    padding-top: 130px;
+    padding-bottom: 58px;
+  }
+
+  .hero__media {
+    background:
+      linear-gradient(180deg, rgba(17, 17, 17, 0.78) 0%, rgba(17, 17, 17, 0.38) 44%, rgba(17, 17, 17, 0.86) 100%),
+      url("../images/hero/hero-tshirts.svg") center / cover no-repeat;
+  }
+
+  .section {
+    padding: 78px 0;
+  }
+
+  .catalog-toolbar,
+  .about-layout,
+  .contacts-layout,
+  .site-footer,
+  .modal__panel {
+    grid-template-columns: 1fr;
+  }
+
+  .about-copy {
+    position: static;
+  }
+
+  .site-footer {
+    justify-items: start;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+
+  .modal__panel {
+    max-height: calc(100svh - 34px);
+    overflow-y: auto;
+  }
+
+  .modal__image-wrap {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand__name {
+    font-size: 0.95rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(4.4rem, 25vw, 7rem);
+  }
+
+  .section h2 {
+    font-size: clamp(2rem, 13vw, 3.6rem);
+  }
+
+  .product-card__image {
+    aspect-ratio: 1 / 0.95;
+  }
+
+  .contact-list {
+    font-size: clamp(1.45rem, 10vw, 2.4rem);
+  }
+
+  .map-link {
+    min-height: 220px;
+    padding: 22px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+  }
+}

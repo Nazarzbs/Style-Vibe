@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1000" role="img" aria-label="White Essential DCB1>;:0">
+  <rect width="900" height="1000" fill="#d9d6d0"/>
+  <circle cx="680" cy="720" r="260" fill="#ff6b00" opacity=".2"/>
+  <path d="M342 132 450 78l108 54 142 88-78 146-78-46v520H356V320l-78 46-78-146 142-88Z" fill="#fff"/>
+  <path d="M342 132c40 78 176 78 216 0L450 78l-108 54Z" fill="#ececec"/>
+  <path d="M356 320v520h188V320" fill="none" stroke="#ededed" stroke-width="8"/>
+  <text x="450" y="912" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#111">ESSENTIAL</text>
+</svg>

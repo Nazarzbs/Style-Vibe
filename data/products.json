@@ -1,0 +1,98 @@
+[
+  {
+    "id": "tee-classic-black",
+    "name": "Classic Black",
+    "price": 799,
+    "currency": "UAH",
+    "description": "Універсальна чорна база. Щільна бавовна, рівний крій, підходить під джинси, костюм і спорт.",
+    "image": "images/products/classic-black.svg",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["#111111", "#ffffff"],
+    "tags": ["basic", "чорна", "бавовна", "classic"],
+    "featured": true
+  },
+  {
+    "id": "tee-sand-oversize",
+    "name": "Sand Oversize",
+    "price": 899,
+    "currency": "UAH",
+    "description": "Вільний oversize у пісочному відтінку. М’яка посадка, подовжений рукав, ідеально на літо.",
+    "image": "images/products/sand-oversize.svg",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["#d8c1a4", "#111111"],
+    "tags": ["oversize", "пісочна", "літо", "sand"],
+    "featured": true
+  },
+  {
+    "id": "tee-orange-drop",
+    "name": "Orange Drop",
+    "price": 849,
+    "currency": "UAH",
+    "description": "Акцент сезону: насичений помаранчевий. Для тих, хто хоче виділитись без принтів.",
+    "image": "images/products/orange-drop.svg",
+    "sizes": ["XS", "S", "M", "L"],
+    "colors": ["#ff6b00", "#111111"],
+    "tags": ["акцент", "помаранчева", "літо", "orange"],
+    "featured": true
+  },
+  {
+    "id": "tee-white-essential",
+    "name": "White Essential",
+    "price": 749,
+    "currency": "UAH",
+    "description": "Чиста біла футболка без зайвих деталей. Легка, дихаюча, добре тримає білизну після прання.",
+    "image": "images/products/white-essential.svg",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["#ffffff", "#111111"],
+    "tags": ["basic", "біла", "essential", "бавовна"],
+    "featured": true
+  },
+  {
+    "id": "tee-graphite-heavy",
+    "name": "Graphite Heavy",
+    "price": 949,
+    "currency": "UAH",
+    "description": "Важка тканина 220 gsm у графіті. Триває форму, приємно сідає на прохолодні вечори.",
+    "image": "images/products/graphite-heavy.svg",
+    "sizes": ["M", "L", "XL"],
+    "colors": ["#2b2b2b", "#6f6b66"],
+    "tags": ["heavy", "графіт", "premium"],
+    "featured": false
+  },
+  {
+    "id": "tee-olive-daily",
+    "name": "Olive Daily",
+    "price": 829,
+    "currency": "UAH",
+    "description": "Спокійна олива для щоденних образів. Добре лягає з денімом, чиносами та кросівками.",
+    "image": "images/products/olive-daily.svg",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["#56614a", "#111111"],
+    "tags": ["olive", "олива", "daily"],
+    "featured": false
+  },
+  {
+    "id": "tee-sky-soft",
+    "name": "Sky Soft",
+    "price": 819,
+    "currency": "UAH",
+    "description": "Ніжний блакитний відтінок і м’яка бавовна. Легка модель для міста й подорожей.",
+    "image": "images/products/sky-soft.svg",
+    "sizes": ["XS", "S", "M", "L"],
+    "colors": ["#8eb4c8", "#ffffff"],
+    "tags": ["блакитна", "soft", "літо", "sky"],
+    "featured": false
+  },
+  {
+    "id": "tee-burgundy-city",
+    "name": "Burgundy City",
+    "price": 879,
+    "currency": "UAH",
+    "description": "Глибокий бордовий для вечірніх образів. Щільний крій, акуратний комір, виглядає дорого.",
+    "image": "images/products/burgundy-city.svg",
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["#6b2430", "#111111"],
+    "tags": ["бордова", "city", "вечір"],
+    "featured": false
+  }
+]

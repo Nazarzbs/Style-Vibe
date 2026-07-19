@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1000" role="img" aria-label="Classic Black DCB1>;:0">
+  <rect width="900" height="1000" fill="#e8ded4"/>
+  <circle cx="720" cy="220" r="230" fill="#ff6b00" opacity=".18"/>
+  <path d="M342 132 450 78l108 54 142 88-78 146-78-46v520H356V320l-78 46-78-146 142-88Z" fill="#111"/>
+  <path d="M342 132c40 78 176 78 216 0L450 78l-108 54Z" fill="#232323"/>
+  <path d="M356 320v520h188V320" fill="none" stroke="#2f2f2f" stroke-width="8"/>
+  <text x="450" y="912" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#111">CLASSIC</text>
+</svg>
