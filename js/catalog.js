@@ -92,7 +92,7 @@ function renderProducts() {
               <h3>${product.name}</h3>
               <span class="price">${formatPrice(product)}</span>
             </div>
-            <p>${product.description}</p>
+            <p class="product-card__desc">${product.description}</p>
             <div class="meta-row" aria-label="Доступні розміри">
               ${product.sizes.map(createSizeChip).join("")}
             </div>
