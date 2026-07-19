@@ -96,7 +96,6 @@
 
   .catalog-toolbar,
   .about-layout,
-  .site-footer,
   .modal__panel {
     grid-template-columns: 1fr;
   }
@@ -106,10 +105,6 @@
   }
 
   .site-footer {
-    justify-items: start;
-  }
-
-  .footer-links {
     justify-content: flex-start;
   }
 
@@ -159,13 +154,7 @@
   }
 
   .site-footer {
-    grid-template-columns: 1fr;
-    justify-items: start;
     gap: 14px;
-  }
-
-  .footer-links {
-    justify-self: start;
   }
 
   .product-card__image {
