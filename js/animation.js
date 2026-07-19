@@ -5,7 +5,16 @@ function revealElement(element) {
   observer?.unobserve(element);
 }
 
+function prepareProductCards() {
+  document.querySelectorAll(".product-card[data-reveal]:not(.is-visible)").forEach((card, index) => {
+    card.style.setProperty("--reveal-delay", `${Math.min(index * 70, 420)}ms`);
+    card.setAttribute("data-reveal", "product");
+  });
+}
+
 function observeRevealElements() {
+  prepareProductCards();
+
   const elements = document.querySelectorAll("[data-reveal]:not(.is-visible)");
 
   if (!("IntersectionObserver" in window)) {
@@ -26,8 +35,8 @@ export function initAnimations() {
       });
     },
     {
-      threshold: 0.16,
-      rootMargin: "0px 0px -60px",
+      threshold: 0.12,
+      rootMargin: "0px 0px -40px",
     }
   );
 
