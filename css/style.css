@@ -74,6 +74,13 @@ body.modal-open {
   border-radius: 50%;
   background: var(--color-accent);
   color: var(--color-secondary);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
+.brand__name {
+  letter-spacing: 0.04em;
+  text-transform: none;
 }
 
 .site-nav {
@@ -119,9 +126,26 @@ body.modal-open {
   color: var(--color-secondary);
 }
 
+.button--ghost {
+  border-color: rgba(255, 255, 255, 0.42);
+  background: transparent;
+  color: var(--color-secondary);
+}
+
+.button--ghost:hover {
+  border-color: var(--color-secondary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
 .header-cta:hover,
 .button:hover {
   transform: translateY(-2px);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .nav-toggle {
@@ -176,10 +200,11 @@ body.modal-open {
 .hero h1 {
   margin-bottom: 18px;
   font-family: var(--font-display);
-  font-size: clamp(5rem, 17vw, 14rem);
+  font-size: clamp(3.4rem, 11vw, 8.5rem);
   font-weight: 800;
-  letter-spacing: -0.1em;
-  line-height: 0.82;
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+  max-width: 12ch;
 }
 
 .hero__lead {
@@ -417,17 +442,44 @@ body.modal-open {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 440px);
   gap: 28px;
+  align-items: stretch;
 }
 
-.contact-list {
+.contact-primary {
   display: grid;
-  gap: 14px;
-  font-style: normal;
+  align-content: start;
+  gap: 18px;
+}
+
+.contact-primary__label {
+  color: var(--color-accent);
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4vw, 3.4rem);
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  line-height: 1;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.contact-primary__handle {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+  transition: color var(--transition);
+}
+
+.contact-primary__handle:hover {
+  color: var(--color-accent);
+}
+
+.contact-primary__text {
+  max-width: 36rem;
+  color: var(--color-ink-soft);
+}
+
+.contact-primary .button {
+  justify-self: start;
 }
 
 .map-link {
@@ -561,6 +613,16 @@ body.modal-open {
   color: var(--color-accent) !important;
   font-size: 1.5rem;
   font-weight: 800;
+}
+
+.modal__hint {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(255, 107, 0, 0.08);
+  color: var(--color-ink-soft) !important;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .modal__options {

@@ -1,5 +1,7 @@
 const PRODUCTS_URL = "data/products.json";
-const sellerEmail = "hello@stitch.ua";
+const INSTAGRAM_DM = "https://ig.me/m/stylevibe.ua";
+const INSTAGRAM_HINT =
+  "Оберіть модель і напишіть нам в Instagram — відповімо щодо розміру й оплати.";
 
 const state = {
   products: [],
@@ -19,6 +21,7 @@ const elements = {
   modalDescription: document.querySelector("[data-modal-description]"),
   modalSizes: document.querySelector("[data-modal-sizes]"),
   modalColors: document.querySelector("[data-modal-colors]"),
+  modalHint: document.querySelector("[data-modal-hint]"),
   orderLink: document.querySelector("[data-order-link]"),
 };
 
@@ -115,9 +118,14 @@ function fillModal(product) {
   elements.modalSizes.innerHTML = product.sizes.map(createSizeChip).join("");
   elements.modalColors.innerHTML = product.colors.map(createColorChip).join("");
 
-  const subject = encodeURIComponent(`Замовлення: ${product.name}`);
-  const body = encodeURIComponent(`Вітаю! Хочу замовити футболку ${product.name}. Підкажіть, будь ласка, наявність розміру.`);
-  elements.orderLink.href = `mailto:${sellerEmail}?subject=${subject}&body=${body}`;
+  if (elements.modalHint) {
+    elements.modalHint.textContent = `${INSTAGRAM_HINT} Модель: ${product.name}.`;
+  }
+
+  elements.orderLink.href = INSTAGRAM_DM;
+  elements.orderLink.target = "_blank";
+  elements.orderLink.rel = "noreferrer";
+  elements.orderLink.textContent = "Написати в Instagram";
 }
 
 function openModal(product) {
